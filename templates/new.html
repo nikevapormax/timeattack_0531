@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/new/" method="post">
+        <!-- 암호화 정보 전송 -->
+        {% csrf_token %}
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <div>
+            <input placeholder="제목을 입력하세요." name="title">
+        </div>
+        <div>
+            <input placeholder="카테고리를 입력하세요." name="category">
+        </div>
+        <div>
+            <input placeholder="내용을 입력하세요." name="content">
+        </div>
+        <button type="submit">등록하기</button>
+    </form>
+</body>
+</html>
